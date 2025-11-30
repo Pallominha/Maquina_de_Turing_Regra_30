@@ -38,18 +38,16 @@ Para determinar o estado da célula na próxima geração, a Máquina de Turing 
 | ⬛⬛⬜ (001) | ⬛ (1) | 1 |
 | ⬛⬜⬛ (010) | ⬛ (1) | 1 |
 | ⬛⬜⬜ (011) | ⬛ (1) | 1 |
-
 | ⬜⬛⬛ (100) | ⬛ (1) | 1 |
 | ⬜⬛⬜ (101) | ⬜ (0) | 0 |
 | ⬜⬜⬛ (110) | ⬜ (0) | 0 |
 | ⬜⬜⬜ (111) | ⬜ (0) | 0 |
-(Tabela baseada na referência)
 
 ---
 
 ## 📐 Descrição Formal da Máquina
 
-Abaixo encontra-se a definição formal da Máquina de Turing projetada, composta pela tupla $M = (Q, \Sigma, \Gamma, \delta, q_0, q_{aceita}, q_{rejeita})$.
+Abaixo encontra-se a definição formal da Máquina de Turing projetada, composta pela tupla $M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)$.
 
 M = ({q0,q_ant0, q_ant1, q_check00, q_check01, q_check10, q_check11, q_fazA, q_fazB, q_fazC, 
 q_fazD, q_limpa, q_fim}, {0,1}, {0, 1, A, B, C, D, #}, &, q0, #, {q_fim}) 
