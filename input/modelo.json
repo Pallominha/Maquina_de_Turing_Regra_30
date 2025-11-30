@@ -1,0 +1,13 @@
+{
+    "states": ["q0","q_ant0", "q_ant1", "q_check00", "q_check01", "q_check10", "q_check11", "q_fazA", "q_fazB", "q_fazC", "q_fazD", "q_limpar", "q_fim"],
+    "input_symbols": ["0", "1"],
+    "tape_symbols": ["0", "1", "A", "B", "C", "D", "#"],
+    "transiction": [
+        {"initial": "q0", "end": "q_ant0", "read": "0", "write": "0", "action": "S"},
+        {"initial": "q0", "end": "q_ant0", "read": "1", "write": "1", "action": "R"}
+
+    ],
+    "initial_state": "q0",
+    "white": "#",
+    "end_state": ["q_fim"]
+}
