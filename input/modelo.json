@@ -1,11 +1,26 @@
 {
-    "states": ["q0","q_ant0", "q_ant1", "q_check00", "q_check01", "q_check10", "q_check11", "q_fazA", "q_fazB", "q_fazC", "q_fazD", "q_limpar", "q_fim"],
+    "states": ["q0","q_ant0", "q_ant1", "q_check00", "q_check01", "q_check10", "q_check11", "q_fazA", "q_fazB", "q_fazC", "q_fazD", "q_limpa", "q_fim"],
     "input_symbols": ["0", "1"],
     "tape_symbols": ["0", "1", "A", "B", "C", "D", "#"],
     "transiction": [
         {"initial": "q0", "end": "q_ant0", "read": "0", "write": "0", "action": "S"},
         {"initial": "q0", "end": "q_ant0", "read": "1", "write": "1", "action": "R"},
-
+        {"initial": "q0", "end": "q_ant0", "read": "1", "write": "1", "action": "S"},
+        {"initial": "q_ant0", "end": "q_check00", "read": "0", "write": "0", "action": "R"},
+        {"initial:": "q_ant0", "end": "q_check01", "read": "1", "write": "1", "action": "R"},
+        {"initial:": "q_ant0", "end": "q_limpa", "read": "#", "write": "#", "action": "L"},
+        {"initial:": "q_ant1", "end": "q_check10", "read": "0", "write": "0", "action": "R"},
+        {"initial:": "q_ant1", "end": "q_check11", "read": "1", "write": "1", "action": "R"},
+        {"initial:": "q_ant1", "end": "q_limpa", "read": "#", "write": "#", "action": "L"},
+        {"initial:": "q_check00", "end": "q_fazA", "read": "0", "write": "0", "action": "L"},
+        {"initial:": "q_check00", "end": "q_fazB", "read": "1", "write": "1", "action": "L"},
+        {"initial:": "q_check00", "end": "q_fazA", "read": "#", "write": "#", "action": "L"},
+        {"initial:": "q_check01", "end": "q_fazD", "read": "0", "write": "0", "action": "L"},
+        {"initial:": "q_check01", "end": "q_fazD", "read": "1", "write": "1", "action": "L"},
+        {"initial:": "q_check01", "end": "q_fazD", "read": "#", "write": "#", "action": "L"},
+        {"initial:": "q_check10", "end": "q_fazB", "read": "0", "write": "0", "action": "L"},
+        {"initial:": "q_check10", "end": "q_fazA", "read": "1", "write": "1", "action": "L"},
+        {"initial:": "q_check10", "end": "q_fazB", "read": "#", "write": "#", "action": "L"},
         {"initial": "q_check11", "end": "q_fazC", "read": "0", "write": "0", "action": "L"},
         {"initial": "q_check11", "end": "q_fazC", "read": "1", "write": "1", "action": "L"},
         {"initial": "q_check11", "end": "q_fazC", "read": "#", "write": "#", "action": "L"},
@@ -17,7 +32,7 @@
         {"initial": "q_limpa", "end": "q_limpa", "read": "B", "write": "1", "action": "L"},
         {"initial": "q_limpa", "end": "q_limpa", "read": "C", "write": "0", "action": "L"},
         {"initial": "q_limpa", "end": "q_limpa", "read": "D", "write": "1", "action": "L"},
-        {"initial": "q_limpa", "end": "q_fim", "read": "#", "write": "#", "action": "R"}
+        {"initial": "q_limpa", "end": "q_fim", "read": "#", "write": "#", "action": "R"}    
     ],
     "initial_state": "q0",
     "white": "#",
