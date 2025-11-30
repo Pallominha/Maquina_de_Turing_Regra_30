@@ -4,8 +4,20 @@
     "tape_symbols": ["0", "1", "A", "B", "C", "D", "#"],
     "transiction": [
         {"initial": "q0", "end": "q_ant0", "read": "0", "write": "0", "action": "S"},
-        {"initial": "q0", "end": "q_ant0", "read": "1", "write": "1", "action": "R"}
+        {"initial": "q0", "end": "q_ant0", "read": "1", "write": "1", "action": "R"},
 
+        {"initial": "q_check11", "end": "q_fazC", "read": "0", "write": "0", "action": "L"},
+        {"initial": "q_check11", "end": "q_fazC", "read": "1", "write": "1", "action": "L"},
+        {"initial": "q_check11", "end": "q_fazC", "read": "#", "write": "#", "action": "L"},
+        {"initial": "q_fazA", "end": "q_ant0", "read": "0", "write": "A", "action": "R"},
+        {"initial": "q_fazB", "end": "q_ant0", "read": "0", "write": "B", "action": "R"},
+        {"initial": "q_fazC", "end": "q_ant1", "read": "1", "write": "C", "action": "R"},
+        {"initial": "q_fazD", "end": "q_ant1", "read": "1", "write": "D", "action": "R"},
+        {"initial": "q_limpa", "end": "q_limpa", "read": "A", "write": "0", "action": "L"},
+        {"initial": "q_limpa", "end": "q_limpa", "read": "B", "write": "1", "action": "L"},
+        {"initial": "q_limpa", "end": "q_limpa", "read": "C", "write": "0", "action": "L"},
+        {"initial": "q_limpa", "end": "q_limpa", "read": "D", "write": "1", "action": "L"},
+        {"initial": "q_limpa", "end": "q_fim", "read": "#", "write": "#", "action": "R"}
     ],
     "initial_state": "q0",
     "white": "#",
