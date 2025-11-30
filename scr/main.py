@@ -52,7 +52,7 @@ class TuringMachine:
         pointer = ' ' * self.head_position + '^'
         print(f"Passo {self.step_count}:")
         print(f"Fita:   {tape_display}")
-        print(f"Cabeça: {pointer}")
+        print(f"Ponteiro: {pointer}")
         print(f"Estado: {self.current_state}")
         print(f"Lendo:  '{self.tape[self.head_position]}'")
         print("-" * 50)
@@ -77,7 +77,7 @@ class TuringMachine:
         # Escreve na fita
         self.tape[self.head_position] = write_symbol
         
-        # Move a cabeça
+        # Move o ponteiro
         if direction == 'R':
             self.head_position += 1
             if self.head_position >= len(self.tape):
